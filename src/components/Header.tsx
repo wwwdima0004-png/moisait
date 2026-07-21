@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { brand, contactLinks } from "@/config/site";
 
 const navLinks = [
-  { href: "#about", label: "Обо мне" },
-  { href: "#portfolio", label: "Портфолио" },
-  { href: "#services", label: "Услуги" },
-  { href: "#contact", label: "Контакты" },
+  { href: "/#about", label: "Обо мне" },
+  { href: "/#portfolio", label: "Портфолио" },
+  { href: "/#services", label: "Услуги" },
+  { href: "/#contact", label: "Контакты" },
 ];
 
 export default function Header() {
@@ -29,15 +30,15 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="font-display font-semibold tracking-tight text-lg">
+        <Link href="/" className="font-display font-semibold tracking-tight text-lg">
           {brand.name}
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-white/70">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-white transition-colors">
+            <Link key={link.href} href={link.href} className="hover:text-white transition-colors">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -64,9 +65,9 @@ export default function Header() {
       {open && (
         <div className="md:hidden border-t border-white/10 bg-black px-6 py-6 flex flex-col gap-5 text-white/80">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-base">
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-base">
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href={contactLinks.telegram}
