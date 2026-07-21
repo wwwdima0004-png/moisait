@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Портфолио — Telegram-боты, Mini Apps, сайты
 
-## Getting Started
+Одностраничный сайт-портфолио на Next.js (App Router) + Tailwind CSS + Framer Motion.
 
-First, run the development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открыть [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Редактирование контента
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Весь редактируемый контент — в одном файле: **`src/config/site.ts`**
 
-## Learn More
+- `contactLinks` — ссылки на Telegram / WhatsApp / Instagram (сейчас там плейсхолдеры — замени на свои).
+- `brand` — имя/бренд и роль в шапке.
+- `directions` — 3 карточки в секции "Чем занимаюсь".
+- `portfolioCases` — кейсы в портфолио (сейчас 3 концептуальных плейсхолдера). Чтобы добавить реальный проект со скриншотом:
+  1. Положи изображение в `public/portfolio/`.
+  2. В `src/components/Portfolio.tsx` замени градиентную заглушку (`div` с `bg-gradient-to-br`) на `<Image src="/portfolio/..." .../>` для нужной карточки, либо добавь необязательное поле `image` в тип `PortfolioCase` и подставляй его.
+- `services` — список услуг.
 
-To learn more about Next.js, take a look at the following resources:
+## Блог
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Заготовка страницы — `src/app/blog/page.tsx`. Список постов пока пуст (`posts = []`), поэтому показывается заглушка "Первая статья в разработке". Как только появятся статьи — добавляй объекты `{ title, href }` в массив `posts`, либо переводи на MDX/CMS, когда контента станет больше.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Стек
 
-## Deploy on Vercel
+- **Next.js 16 (App Router, TypeScript)** — статический экспорт не нужен, но SSR/маршрутизация уже готовы под будущий рост (блог, доп. страницы).
+- **Tailwind CSS v4** — утилитарные стили, тёмная ч/б палитра задана в `src/app/globals.css`.
+- **Framer Motion** — плавное появление секций при скролле (`src/components/Reveal.tsx`) и hero-анимации.
+- **lucide-react** — иконки направлений/услуг. Иконки Telegram/WhatsApp/Instagram — inline SVG в `src/components/icons.tsx`.
+- Шрифты — **Unbounded** (заголовки) и **Manrope** (текст), оба поддерживают кириллицу, подключены через `next/font/google`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Деплой
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Проще всего — [Vercel](https://vercel.com/new): подключить репозиторий, деплой произойдёт автоматически при пуше. Переменные окружения (см. `.env`) добавляются в настройках проекта на Vercel — сам файл `.env` в репозиторий не коммитится (`.gitignore` уже настроен).
+
+Альтернатива — Netlify или любой хостинг, поддерживающий Node.js/Next.js.
