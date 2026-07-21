@@ -6,7 +6,7 @@ export default function Services() {
     <section id="services" className="border-t border-white/10 py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="section-heading font-display font-semibold tracking-tight">
             Услуги
           </h2>
           <p className="mt-4 max-w-xl text-white/60">

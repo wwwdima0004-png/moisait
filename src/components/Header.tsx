@@ -4,12 +4,19 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { brand, contactLinks } from "@/config/site";
+import { TelegramIcon, WhatsAppIcon, InstagramIcon } from "./icons";
 
 const navLinks = [
   { href: "/#about", label: "Обо мне" },
-  { href: "/#portfolio", label: "Портфолио" },
+  { href: "/portfolio", label: "Портфолио" },
   { href: "/#services", label: "Услуги" },
   { href: "/#contact", label: "Контакты" },
+];
+
+const contactIcons = [
+  { href: contactLinks.telegram, label: "Telegram", Icon: TelegramIcon },
+  { href: contactLinks.whatsapp, label: "WhatsApp", Icon: WhatsAppIcon },
+  { href: contactLinks.instagram, label: "Instagram", Icon: InstagramIcon },
 ];
 
 export default function Header() {
@@ -29,7 +36,7 @@ export default function Header() {
         scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="font-display font-semibold tracking-tight text-lg">
           {brand.name}
         </Link>
@@ -42,7 +49,21 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-3 text-white/60">
+            {contactIcons.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="transition-colors hover:text-white"
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            ))}
+          </div>
           <a
             href={contactLinks.telegram}
             target="_blank"
@@ -77,6 +98,20 @@ export default function Header() {
           >
             Написать в Telegram
           </a>
+          <div className="flex items-center gap-5 pt-1 text-white/60">
+            {contactIcons.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="transition-colors hover:text-white"
+              >
+                <Icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </header>

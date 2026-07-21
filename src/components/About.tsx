@@ -1,4 +1,4 @@
-import { Bot, Smartphone, Globe } from "lucide-react";
+import { Bot, Smartphone, Globe, AppWindow, Layers } from "lucide-react";
 import { directions, type Direction } from "@/config/site";
 import Reveal from "./Reveal";
 
@@ -6,6 +6,8 @@ const iconMap: Record<Direction["icon"], React.ComponentType<{ size?: number; cl
   bot: Bot,
   app: Smartphone,
   site: Globe,
+  webapp: AppWindow,
+  saas: Layers,
 };
 
 export default function About() {
@@ -13,11 +15,11 @@ export default function About() {
     <section id="about" className="border-t border-white/10 py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="section-heading font-display font-semibold tracking-tight">
             Чем занимаюсь
           </h2>
           <p className="mt-4 max-w-xl text-white/60">
-            Три направления, в которых я закрываю задачу полностью — от идеи и дизайна
+            Пять направлений, в которых я закрываю задачу полностью — от идеи и дизайна
             до запуска и поддержки.
           </p>
         </Reveal>

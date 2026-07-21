@@ -30,7 +30,7 @@ export default function Contact() {
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <Reveal>
-          <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="cta-heading font-display font-semibold tracking-tight">
             Есть идея бота, мини-приложения или сайта?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">

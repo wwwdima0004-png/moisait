@@ -2,21 +2,20 @@
 // Меняешь ссылки/тексты здесь — они подтягиваются во все секции автоматически.
 
 export const contactLinks = {
-  // TODO: подставь свои реальные ссылки
-  telegram: "https://t.me/your_username",
-  whatsapp: "https://wa.me/00000000000",
+  telegram: "https://t.me/MCLM444",
+  whatsapp: "https://wa.me/996707057005",
   instagram: "https://instagram.com/your_username",
 };
 
 export const brand = {
-  name: "Dima Dev",
-  role: "Разработчик Telegram-ботов, мини-приложений и сайтов",
+  name: "Pulse Tech",
+  role: "Разработка Telegram-ботов, мини-приложений и сайтов",
 };
 
 export type Direction = {
   title: string;
   description: string;
-  icon: "bot" | "app" | "site";
+  icon: "bot" | "app" | "site" | "webapp" | "saas";
 };
 
 export const directions: Direction[] = [
@@ -38,14 +37,23 @@ export const directions: Direction[] = [
       "Лендинги и сайты, которые быстро грузятся, красиво выглядят и понятно ведут посетителя к целевому действию.",
     icon: "site",
   },
+  {
+    title: "Обычные приложения",
+    description:
+      "Веб- и мобильные приложения вне Telegram: личные кабинеты, внутренние инструменты, панели администратора — там, где нужен отдельный продукт.",
+    icon: "webapp",
+  },
+  {
+    title: "SaaS-сервисы",
+    description:
+      "Комплексные продукты с подпиской, ролями пользователей и интеграциями — от первой версии до продукта, готового к росту.",
+    icon: "saas",
+  },
 ];
-
-export type PortfolioCategory = "Telegram-бот" | "Mini App" | "Сайт";
 
 export type PortfolioCase = {
   id: string;
   title: string;
-  category: PortfolioCategory;
   task: string;
   result: string;
   gradient: string; // класс/значение для ч/б градиентной заглушки
@@ -53,34 +61,31 @@ export type PortfolioCase = {
 
 export const portfolioCases: PortfolioCase[] = [
   {
-    id: "order-bot",
-    title: "Бот приёма заказов для кофейни",
-    category: "Telegram-бот",
-    task:
-      "Клиенту нужно было убрать очередь звонков и принимать заказы прямо в Telegram, с оплатой и уведомлением бариста.",
-    result:
-      "Бот с меню, корзиной, онлайн-оплатой и авто-уведомлением на кассу. Обработка заказа — 40 секунд вместо 3 минут разговора.",
-    gradient: "from-neutral-100 via-neutral-400 to-black",
-  },
-  {
-    id: "booking-miniapp",
-    title: "Mini App для записи в барбершоп",
-    category: "Mini App",
-    task:
-      "Нужно было заменить запись через переписку на понятный календарь прямо внутри Telegram, без установки приложений.",
-    result:
-      "Мини-приложение с выбором мастера, услуги и времени в 3 тапа. Число пропущенных записей снизилось почти вдвое.",
-    gradient: "from-white via-neutral-500 to-neutral-900",
-  },
-  {
     id: "studio-landing",
     title: "Сайт-визитка для дизайн-студии",
-    category: "Сайт",
     task:
       "Нужен был быстрый, современный сайт-портфолио, который убедительно показывает уровень студии с первого экрана.",
     result:
       "Одностраничный сайт с анимациями при скролле и загрузкой меньше секунды. Заявки с сайта пошли уже в первую неделю.",
     gradient: "from-neutral-200 via-neutral-600 to-black",
+  },
+  {
+    id: "furniture-catalog",
+    title: "Сайт-каталог для мебельного шоурума",
+    task:
+      "Клиенту нужен был сайт с каталогом коллекций и удобной фильтрацией, который можно обновлять самостоятельно, без разработчика.",
+    result:
+      "Каталог с фильтрами по материалу и размеру на несложной CMS. Владелец сам добавляет новые позиции за пару минут.",
+    gradient: "from-neutral-100 via-neutral-400 to-black",
+  },
+  {
+    id: "saas-launch",
+    title: "Лендинг для запуска SaaS-продукта",
+    task:
+      "Стартапу нужен был сайт под запуск: объяснить продукт за 10 секунд и провести посетителя к регистрации в бету.",
+    result:
+      "Одностраничник с чётким объяснением ценности и формой предзаписи. Первые 200 регистраций собрали за неделю после публикации.",
+    gradient: "from-white via-neutral-500 to-neutral-900",
   },
 ];
 

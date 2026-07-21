@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { contactLinks } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Блог — Dima Dev",
+  title: "Блог — Pulse Tech",
   description: "Заметки о разработке Telegram-ботов, мини-приложений и сайтов. Скоро здесь появятся первые статьи.",
 };
 
@@ -21,7 +21,7 @@ export default function BlogPage() {
       <main className="flex-1 pt-16">
         <section className="mx-auto max-w-4xl px-6 py-28">
           <p className="mb-6 text-sm uppercase tracking-[0.25em] text-white/50">Блог</p>
-          <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="cta-heading font-display font-semibold tracking-tight">
             Статьи скоро появятся
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/60">

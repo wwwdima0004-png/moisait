@@ -15,13 +15,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Dima Dev — Telegram-боты, Mini Apps и сайты",
+  title: "Pulse Tech — Telegram-боты, Mini Apps и сайты",
   description:
-    "Создаю Telegram-ботов, мини-приложения (Mini Apps) и сайты. Быстро, современно, по делу — напишите в Telegram и обсудим задачу.",
+    "Pulse Tech создаёт Telegram-ботов, мини-приложения (Mini Apps) и сайты. Быстро, современно, по делу — напишите в Telegram и обсудим задачу.",
   openGraph: {
-    title: "Dima Dev — Telegram-боты, Mini Apps и сайты",
+    title: "Pulse Tech — Telegram-боты, Mini Apps и сайты",
     description:
-      "Создаю Telegram-ботов, мини-приложения (Mini Apps) и сайты. Быстро, современно, по делу.",
+      "Pulse Tech создаёт Telegram-ботов, мини-приложения (Mini Apps) и сайты. Быстро, современно, по делу.",
     locale: "ru_RU",
     type: "website",
   },

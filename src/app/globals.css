@@ -31,6 +31,32 @@ body {
   font-family: var(--font-display);
 }
 
+/*
+ * Плавная типографика через clamp(): размер шрифта считается от ширины
+ * вьюпорта между заданными мин/макс значениями, без скачков между
+ * брейкпоинтами (источник бага с "наслаивающимся" текстом на мобильных).
+ */
+.hero-heading {
+  font-size: clamp(2.25rem, 1rem + 6vw, 4.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.hero-lede {
+  font-size: clamp(1rem, 0.85rem + 0.6vw, 1.125rem);
+  line-height: 1.6;
+}
+
+.section-heading {
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.cta-heading {
+  font-size: clamp(1.875rem, 1.5rem + 2.2vw, 3rem);
+  line-height: 1.15;
+}
+
 /* лёгкий шум/зерно на фоне hero — придаёт глубину чёрному фону без лишнего веса */
 .grain-overlay {
   position: absolute;

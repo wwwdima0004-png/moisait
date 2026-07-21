@@ -3,12 +3,13 @@ import Reveal from "./Reveal";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="border-t border-white/10 py-28">
+    <section className="pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          <p className="mb-4 text-sm uppercase tracking-[0.25em] text-white/50">Сайты</p>
+          <h1 className="section-heading font-display font-semibold tracking-tight">
             Портфолио
-          </h2>
+          </h1>
           <p className="mt-4 max-w-xl text-white/60">
             Концептуальные кейсы — примеры задач, с которыми я работаю. Скриншоты
             реальных проектов появятся здесь по мере запуска.
@@ -23,13 +24,10 @@ export default function Portfolio() {
                   className={`relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br ${item.gradient}`}
                 >
                   <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/0" />
-                  <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium tracking-wide text-white backdrop-blur-sm">
-                    {item.category}
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-lg font-semibold">{item.title}</h3>
+                  <h2 className="font-display text-lg font-semibold">{item.title}</h2>
                   <p className="mt-3 text-sm text-white/55">
                     <span className="text-white/70">Задача: </span>
                     {item.task}
