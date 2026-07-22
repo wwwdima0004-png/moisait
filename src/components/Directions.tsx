@@ -10,17 +10,17 @@ const iconMap: Record<Direction["icon"], React.ComponentType<{ size?: number; cl
   saas: Layers,
 };
 
-export default function About() {
+export default function Directions() {
   return (
-    <section id="about" className="border-t border-white/10 py-28">
+    <section id="directions" className="border-t border-white/10 py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <h2 className="section-heading font-display font-semibold tracking-tight">
-            Чем занимаюсь
+            Направления
           </h2>
           <p className="mt-4 max-w-xl text-white/60">
-            Пять направлений, в которых я закрываю задачу полностью — от идеи и дизайна
-            до запуска и поддержки.
+            Каждое направление — законченный продукт: мы закрываем задачу полностью,
+            от идеи и дизайна до запуска и поддержки.
           </p>
         </Reveal>
 

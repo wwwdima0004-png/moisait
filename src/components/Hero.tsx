@@ -25,9 +25,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
           </span>
-          <span className="uppercase tracking-[0.25em]">
-            На связи · Telegram-боты · Mini Apps · Сайты
-          </span>
+          <span className="uppercase tracking-[0.25em]">На связи</span>
         </motion.div>
 
         <motion.h1
@@ -36,8 +34,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="hero-heading font-display max-w-4xl font-semibold tracking-tight"
         >
-          Создаю Telegram-ботов, мини-приложения и сайты,
-          <span className="text-white/40"> которые реально работают на бизнес</span>
+          Pulse Tech создаёт цифровые продукты,
+          <span className="text-white/40"> которые двигают бизнес вперёд</span>
         </motion.h1>
 
         <motion.p
@@ -46,8 +44,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="hero-lede mt-8 max-w-xl text-white/60"
         >
-          Быстро запускаю продукты под ключ — от идеи до рабочего бота, мини-приложения
-          или сайта. Без шаблонов и лишних затягиваний.
+          Быстро запускаем продукты под ключ — от идеи до результата, без шаблонов и
+          лишних затягиваний. Ниже — все направления, которыми мы занимаемся.
         </motion.p>
 
         <motion.div

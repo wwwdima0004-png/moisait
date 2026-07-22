@@ -7,7 +7,7 @@ import { brand, contactLinks } from "@/config/site";
 import { TelegramIcon, WhatsAppIcon, InstagramIcon } from "./icons";
 
 const navLinks = [
-  { href: "/#about", label: "Обо мне" },
+  { href: "/#directions", label: "Направления" },
   { href: "/portfolio", label: "Портфолио" },
   { href: "/#services", label: "Услуги" },
   { href: "/#contact", label: "Контакты" },

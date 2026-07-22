@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Портфолио — Pulse Tech",
-  description: "Сайты, которые я делаю: от лендингов и каталогов до посадочных страниц под запуск продукта.",
+  description: "Сайты Pulse Tech: от лендингов и каталогов до посадочных страниц под запуск продукта.",
 };
 
 export default function PortfolioPage() {
