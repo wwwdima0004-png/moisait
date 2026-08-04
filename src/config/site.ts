@@ -15,39 +15,29 @@ export const brand = {
 export type Direction = {
   title: string;
   description: string;
-  icon: "bot" | "app" | "site" | "webapp" | "saas";
+  icon: "site" | "bot" | "app" | "automation";
 };
 
 export const directions: Direction[] = [
   {
-    title: "Разработка сайтов",
-    description:
-      "Лендинги и сайты, которые быстро грузятся, красиво выглядят и понятно ведут посетителя к целевому действию.",
+    title: "Сайты",
+    description: "Современные и быстрые сайты под любые задачи.",
     icon: "site",
   },
   {
-    title: "Разработка Telegram-ботов",
-    description:
-      "Автоматизация, продажи, поддержка клиентов, интеграции с CRM и оплатой — всё внутри привычного мессенджера.",
+    title: "Telegram-боты",
+    description: "Автоматизация, приём заявок, уведомления и многое другое.",
     icon: "bot",
   },
   {
-    title: "Разработка мини-приложений (Mini Apps)",
-    description:
-      "Полноценные веб-приложения внутри Telegram: каталоги, записи, игры, личные кабинеты — без установки отдельного приложения.",
+    title: "Мини-приложения",
+    description: "Интерактивные решения внутри Telegram.",
     icon: "app",
   },
   {
-    title: "Разработка обычных приложений",
-    description:
-      "Веб- и мобильные приложения вне Telegram: личные кабинеты, внутренние инструменты, панели администратора — там, где нужен отдельный продукт.",
-    icon: "webapp",
-  },
-  {
-    title: "Разработка SaaS-сервисов",
-    description:
-      "Комплексные продукты с подпиской, ролями пользователей и интеграциями — от первой версии до продукта, готового к росту.",
-    icon: "saas",
+    title: "Автоматизация",
+    description: "Оптимизируем процессы и экономим ваше время.",
+    icon: "automation",
   },
 ];
 
@@ -89,25 +79,31 @@ export const portfolioCases: PortfolioCase[] = [
   },
 ];
 
-export type Service = {
+export type Benefit = {
   title: string;
   description: string;
+  icon: "fast" | "reliable" | "result" | "modern";
 };
 
-export const services: Service[] = [
+export const benefits: Benefit[] = [
   {
-    title: "Telegram-боты",
-    description:
-      "От простого бота-помощника до сложной автоматизации с оплатой, базой клиентов и интеграциями — под задачу, а не шаблон.",
+    title: "Быстрый запуск",
+    description: "Запускаем проекты в короткие сроки.",
+    icon: "fast",
   },
   {
-    title: "Mini Apps",
-    description:
-      "Веб-приложения внутри Telegram: каталоги, личные кабинеты, формы записи. Быстро открываются и не требуют установки.",
+    title: "Надёжность",
+    description: "Поддержка и доработка после запуска.",
+    icon: "reliable",
   },
   {
-    title: "Сайты и лендинги",
-    description:
-      "Разработка сайтов с нуля: от идеи и структуры до адаптивной вёрстки, анимаций и запуска.",
+    title: "Результат",
+    description: "Делаем решения, которые приносят прибыль.",
+    icon: "result",
+  },
+  {
+    title: "Современный подход",
+    description: "Используем актуальные технологии и лучшие практики.",
+    icon: "modern",
   },
 ];

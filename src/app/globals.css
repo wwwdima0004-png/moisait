@@ -3,14 +3,20 @@
 :root {
   --background: #0a0a0a;
   --foreground: #f5f5f5;
-  --accent-glow: #ffffff;
+  /* Единственный акцентный оттенок сайта — приглушённый циан, используется
+     только для glow/неоновых акцентов (контуры, соединительные линии,
+     подсветка при hover). Весь остальной интерфейс остаётся ч/б. */
+  --accent: #56d6e0;
+  --accent-rgb: 86, 214, 224;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 * {
@@ -29,6 +35,21 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Медленное движение "данных" вдоль соединительных линий в hero-иллюстрации. */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.flow-line {
+  animation: flow-dash 3.5s linear infinite;
 }
 
 /*

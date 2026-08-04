@@ -1,58 +1,61 @@
+import { ArrowUpRight, Send } from "lucide-react";
 import { contactLinks } from "@/config/site";
-import { TelegramIcon, WhatsAppIcon, InstagramIcon } from "./icons";
+import { WhatsAppIcon, InstagramIcon } from "./icons";
 import Reveal from "./Reveal";
-
-const contactButtons = [
-  {
-    href: contactLinks.telegram,
-    label: "Telegram",
-    Icon: TelegramIcon,
-  },
-  {
-    href: contactLinks.whatsapp,
-    label: "WhatsApp",
-    Icon: WhatsAppIcon,
-  },
-  {
-    href: contactLinks.instagram,
-    label: "Instagram",
-    Icon: InstagramIcon,
-  },
-];
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-white/10 py-32">
-      <div
-        className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 translate-y-1/2 rounded-full bg-white/10 blur-[140px]"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto max-w-4xl px-6 text-center">
+    <section id="contact" className="border-t border-white/10 py-28">
+      <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="cta-heading font-display font-semibold tracking-tight">
-            Есть идея бота, мини-приложения или сайта?
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">
-            Напишите напрямую — отвечаем быстро и сразу обсуждаем детали, без анкет и
-            долгих согласований.
-          </p>
-        </Reveal>
+          <div className="flex flex-col gap-8 rounded-2xl border border-white/10 bg-white/[0.02] p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-accent">
+                <Send size={20} />
+              </span>
+              <div>
+                <h2 className="font-display text-xl font-semibold sm:text-2xl">
+                  Готовы обсудить ваш проект?
+                </h2>
+                <p className="mt-2 max-w-md text-sm text-white/55">
+                  Напишите нам в Telegram — ответим быстро и по делу. Или выберите
+                  другой мессенджер.
+                </p>
+              </div>
+            </div>
 
-        <Reveal delay={0.15}>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            {contactButtons.map(({ href, label, Icon }) => (
+            <div className="flex flex-wrap items-center gap-3">
               <a
-                key={label}
-                href={href}
+                href={contactLinks.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-base font-medium transition-all hover:scale-105 hover:border-white hover:bg-white hover:text-black"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-base font-medium text-black transition-transform hover:scale-105"
               >
-                <Icon className="h-5 w-5" />
-                {label}
+                Написать в Telegram
+                <ArrowUpRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </a>
-            ))}
+              <a
+                href={contactLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={contactLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>
