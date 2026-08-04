@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, Globe, Send, Grid2x2, Zap } from "lucide-react";
 import { contactLinks } from "@/config/site";
 import HeroIllustration from "./HeroIllustration";
+import HeroBackground from "./HeroBackground";
 
 const chips = [
   { icon: Globe, label: "Сайты" },
@@ -16,11 +17,7 @@ const chips = [
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-      <div className="grain-overlay" />
-      <div
-        className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-accent/10 blur-[140px]"
-        aria-hidden="true"
-      />
+      <HeroBackground />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 lg:flex-row lg:items-center lg:gap-12">
         <div className="lg:w-[54%]">
@@ -31,26 +28,37 @@ export default function Hero() {
             className="mb-6 flex items-center gap-3 text-sm text-white/50"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
             </span>
-            <span className="uppercase tracking-[0.25em]">На связи</span>
+            <span className="font-mono uppercase tracking-[0.25em]">На связи</span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="hero-heading font-display font-semibold tracking-tight"
-          >
-            <span className="block">Создаём цифровые решения,</span>
-            <span className="block text-white/40">которые ускоряют ваш бизнес</span>
-          </motion.h1>
+          <div className="space-y-3">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <span className="hero-heading font-display inline-block rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3 font-semibold tracking-tight sm:px-7 sm:py-4">
+                Создаём цифровые решения
+              </span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+            >
+              <span className="hero-heading font-display inline-block rounded-2xl border border-white/10 px-5 py-3 font-semibold tracking-tight text-white/45 sm:px-7 sm:py-4">
+                которые ускоряют ваш бизнес
+              </span>
+            </motion.div>
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.26 }}
             className="hero-lede mt-8 max-w-xl text-white/60"
           >
             Разрабатываем сайты, Telegram-ботов и мини-приложения, автоматизируем
@@ -60,7 +68,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
+            transition={{ duration: 0.7, delay: 0.32 }}
             className="mt-8 flex flex-wrap gap-3"
           >
             {chips.map(({ icon: Icon, label }) => (
@@ -68,7 +76,7 @@ export default function Hero() {
                 key={label}
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-white/70"
               >
-                <Icon size={15} className="text-accent" />
+                <Icon size={15} className="text-white/70" />
                 {label}
               </span>
             ))}
@@ -77,7 +85,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.36 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <a

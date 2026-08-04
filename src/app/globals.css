@@ -3,11 +3,11 @@
 :root {
   --background: #0a0a0a;
   --foreground: #f5f5f5;
-  /* Единственный акцентный оттенок сайта — приглушённый циан, используется
-     только для glow/неоновых акцентов (контуры, соединительные линии,
-     подсветка при hover). Весь остальной интерфейс остаётся ч/б. */
-  --accent: #56d6e0;
-  --accent-rgb: 86, 214, 224;
+  /* Строго ч/б палитра: "accent" — это белый, используется для тех же
+     мест, что и раньше (glow, подсветка при hover, контуры), но без
+     цветных оттенков — только белый/серый. */
+  --accent: #ffffff;
+  --accent-rgb: 255, 255, 255;
 }
 
 @theme inline {
@@ -76,15 +76,6 @@ body {
 .cta-heading {
   font-size: clamp(1.875rem, 1.5rem + 2.2vw, 3rem);
   line-height: 1.15;
-}
-
-/* лёгкий шум/зерно на фоне hero — придаёт глубину чёрному фону без лишнего веса */
-.grain-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: reduce) {

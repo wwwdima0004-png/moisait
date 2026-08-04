@@ -73,13 +73,29 @@ export default function Header() {
           </a>
         </div>
 
-        <button
-          aria-label="Открыть меню"
-          className="md:hidden text-white"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-3 text-white/60">
+            {contactIcons.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="transition-colors hover:text-white"
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            ))}
+          </div>
+          <button
+            aria-label="Открыть меню"
+            className="text-white"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -97,20 +113,6 @@ export default function Header() {
           >
             Написать в Telegram
           </a>
-          <div className="flex items-center gap-5 pt-1 text-white/60">
-            {contactIcons.map(({ href, label, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="transition-colors hover:text-white"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            ))}
-          </div>
         </div>
       )}
     </header>

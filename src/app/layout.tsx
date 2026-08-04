@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Unbounded, Manrope, JetBrains_Mono } from "next/font/google";
+import { Exo_2, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const unbounded = Unbounded({
+const exo2 = Exo_2({
   variable: "--font-display",
   subsets: ["latin", "cyrillic"],
   weight: ["500", "600", "700", "800"],
 });
 
-const manrope = Manrope({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${unbounded.variable} ${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${exo2.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white font-body">
         {children}
