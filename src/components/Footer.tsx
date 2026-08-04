@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-sm text-white/50 sm:flex-row sm:justify-between">
         <div className="flex flex-col items-center gap-1 sm:items-start">
-          <span className="font-display font-semibold text-white/80">{brand.name}</span>
+          <span className="font-brand font-semibold text-white/80">{brand.name}</span>
           <span>© {new Date().getFullYear()} Все права защищены</span>
         </div>
 

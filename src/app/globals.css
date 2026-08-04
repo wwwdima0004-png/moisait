@@ -17,6 +17,7 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
+  --font-brand: var(--font-brand);
 }
 
 * {
@@ -39,6 +40,10 @@ body {
 
 .font-mono {
   font-family: var(--font-mono);
+}
+
+.font-brand {
+  font-family: var(--font-brand);
 }
 
 /* Медленное движение "данных" вдоль соединительных линий в hero-иллюстрации. */

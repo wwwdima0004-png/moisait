@@ -36,7 +36,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-display font-semibold tracking-tight text-lg">
+        <Link href="/" className="font-brand font-semibold tracking-tight text-lg">
           {brand.name}
         </Link>
 
@@ -73,8 +73,8 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="flex items-center gap-4 md:hidden">
-          <div className="flex items-center gap-3 text-white/60">
+        <div className="flex items-center md:hidden">
+          <div className="flex items-center text-white/60">
             {contactIcons.map(({ href, label, Icon }) => (
               <a
                 key={label}
@@ -82,15 +82,15 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="transition-colors hover:text-white"
+                className="flex h-10 w-10 items-center justify-center transition-colors hover:text-white active:text-white"
               >
-                <Icon className="h-[18px] w-[18px]" />
+                <Icon className="h-5 w-5" />
               </a>
             ))}
           </div>
           <button
             aria-label="Открыть меню"
-            className="text-white"
+            className="flex h-10 w-10 items-center justify-center text-white"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={24} /> : <Menu size={24} />}

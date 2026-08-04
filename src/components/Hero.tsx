@@ -34,26 +34,16 @@ export default function Hero() {
             <span className="font-mono uppercase tracking-[0.25em]">На связи</span>
           </motion.div>
 
-          <div className="space-y-3">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <span className="hero-heading font-display inline-block rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3 font-semibold tracking-tight sm:px-7 sm:py-4">
-                Создаём цифровые решения
-              </span>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
-            >
-              <span className="hero-heading font-display inline-block rounded-2xl border border-white/10 px-5 py-3 font-semibold tracking-tight text-white/45 sm:px-7 sm:py-4">
-                которые ускоряют ваш бизнес
-              </span>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h1 className="hero-heading font-display inline-block rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-4 font-semibold tracking-tight sm:px-8 sm:py-6">
+              <span className="block">Создаём IT-решения,</span>
+              <span className="block text-white/45">которые приносят результат</span>
+            </h1>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}

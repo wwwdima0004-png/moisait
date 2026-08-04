@@ -33,7 +33,7 @@ npm run dev
 - **Tailwind CSS v4** — утилитарные стили, тёмная ч/б палитра задана в `src/app/globals.css`.
 - **Framer Motion** — плавное появление секций при скролле (`src/components/Reveal.tsx`) и hero-анимации.
 - **lucide-react** — иконки направлений/услуг. Иконки Telegram/WhatsApp/Instagram — inline SVG в `src/components/icons.tsx`.
-- Шрифты — **Unbounded** (заголовки) и **Manrope** (текст), оба поддерживают кириллицу, подключены через `next/font/google`.
+- Шрифты — **Ruda** (заголовки, кириллица), **Space Grotesk** (только латинский wordmark-логотип — сам шрифт не поддерживает кириллицу), **Inter** (текст) и **JetBrains Mono** (технические лейблы/бейджи/код), все подключены через `next/font/google`.
 
 ## Деплой
 

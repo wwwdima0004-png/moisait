@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Exo_2, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Ruda, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const exo2 = Exo_2({
+// Space Grotesk не имеет кириллических глифов, поэтому он используется
+// только для латинского wordmark-логотипа ("Pulse Tech" в шапке/футере).
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-brand",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
+
+// Ruda — геометричный технологичный гротеск с полноценной поддержкой
+// кириллицы, используется для всех реальных заголовков (h1/h2/h3).
+const ruda = Ruda({
   variable: "--font-display",
   subsets: ["latin", "cyrillic"],
   weight: ["500", "600", "700", "800"],
@@ -41,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${exo2.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${ruda.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white font-body">
         {children}

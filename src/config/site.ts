@@ -4,7 +4,7 @@
 export const contactLinks = {
   telegram: "https://t.me/MCLM444",
   whatsapp: "https://wa.me/996707057005",
-  instagram: "https://instagram.com/your_username",
+  instagram: "https://www.instagram.com/pulse_tech.kg?igsh=NWQ3bGhia3hncW51",
 };
 
 export const brand = {
