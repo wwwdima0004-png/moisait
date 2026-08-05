@@ -59,15 +59,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.32 }}
-            className="mt-8 grid grid-cols-2 items-start gap-3 sm:grid-cols-4"
+            className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
           >
             {chips.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2 text-center text-sm text-white/70"
+                className="flex h-16 min-w-0 items-center justify-center gap-1.5 overflow-hidden rounded-2xl border border-white/15 px-2 text-center text-xs leading-tight text-white/70"
               >
-                <Icon size={15} className="shrink-0 text-white/70" />
-                {label}
+                <Icon size={14} className="shrink-0 text-white/70" />
+                <span className="line-clamp-2 min-w-0 break-words">{label}</span>
               </span>
             ))}
           </motion.div>
