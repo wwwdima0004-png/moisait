@@ -1,63 +1,72 @@
-import { ArrowUpRight, Send } from "lucide-react";
-import { contactLinks } from "@/config/site";
-import { WhatsAppIcon, InstagramIcon } from "./icons";
-import Reveal from "./Reveal";
+import { Phone, MapPin } from "lucide-react";
+import { site, contactLinks } from "@/config/site";
+import { TelegramIcon, InstagramIcon } from "./icons";
+import WhatsAppButton from "./WhatsAppButton";
 
-export default function Contact() {
+export default function Contact({
+  title = "Обсудим ваш проект?",
+  text = "Напишите в WhatsApp: расскажите о задаче в двух словах, мы зададим уточняющие вопросы и предложим следующий шаг.",
+}: {
+  title?: string;
+  text?: string;
+}) {
   return (
-    <section id="contact" className="border-t border-white/10 py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <Reveal>
-          <div className="flex flex-col gap-8 rounded-2xl border border-white/10 bg-white/[0.02] p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-accent">
-                <Send size={20} />
-              </span>
-              <div>
-                <h2 className="font-display text-xl font-semibold sm:text-2xl">
-                  Готовы обсудить ваш проект?
-                </h2>
-                <p className="mt-2 max-w-md text-sm text-white/55">
-                  Напишите нам в Telegram — ответим быстро и по делу. Или выберите
-                  другой мессенджер.
-                </p>
+    <section id="contact" className="scroll-mt-20 border-t border-white/10 py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/[0.02] p-6 sm:p-12">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
+          />
+          <div className="relative flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-xl">
+              <h2 className="cta-heading font-display font-semibold tracking-tight">{title}</h2>
+              <p className="mt-4 text-white/70">{text}</p>
+              <ul className="mt-6 flex flex-col gap-2 text-sm text-white/70 sm:flex-row sm:gap-6">
+                <li>
+                  <a href={contactLinks.phone} className="inline-flex min-h-11 items-center gap-2 hover:text-white">
+                    <Phone size={16} aria-hidden="true" />
+                    {site.phoneDisplay}
+                  </a>
+                </li>
+                <li className="inline-flex min-h-11 items-center gap-2">
+                  <MapPin size={16} aria-hidden="true" />
+                  {site.city}, {site.country}
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <WhatsAppButton fullOnMobile />
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-white/50 sm:hidden">или</span>
+                <a
+                  href={contactLinks.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-white/45 hover:text-white"
+                >
+                  <TelegramIcon className="h-5 w-5" />
+                </a>
+                <a
+                  href={contactLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-white/45 hover:text-white"
+                >
+                  <InstagramIcon className="h-5 w-5" />
+                </a>
               </div>
             </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href={contactLinks.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-base font-medium text-black transition-transform hover:scale-105"
-              >
-                Написать в Telegram
-                <ArrowUpRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
-              <a
-                href={contactLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <WhatsAppIcon className="h-5 w-5" />
-              </a>
-              <a
-                href={contactLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <InstagramIcon className="h-5 w-5" />
-              </a>
-            </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

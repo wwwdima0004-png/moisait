@@ -37,9 +37,9 @@ export default function HeroBackground() {
         />
       </svg>
 
-      <div className="absolute right-6 top-8 hidden font-mono text-[11px] leading-relaxed text-white/10 lg:block">
+      <div className="absolute right-6 top-28 hidden font-mono text-[11px] leading-relaxed text-white/10 lg:block">
         <div>function solve(problem) {"{"}</div>
-        <div className="pl-4">// focus on impact</div>
+        <div className="pl-4">{"// focus on impact"}</div>
         <div className="pl-4">let solution = iterate(problem);</div>
         <div className="pl-4">return solution;</div>
         <div>{"}"}</div>
