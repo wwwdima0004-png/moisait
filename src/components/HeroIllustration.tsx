@@ -9,7 +9,7 @@ const codeLines: { text: string; tone: string }[] = [
 ];
 
 // Декоративная иллюстрация hero: окно редактора и «плавающие» метки.
-// Анимации — CSS keyframes, отключаются при prefers-reduced-motion.
+// Анимации: CSS keyframes, отключаются при prefers-reduced-motion.
 export default function HeroIllustration() {
   return (
     <div className="relative mx-auto aspect-[4/3] w-full max-w-md select-none lg:max-w-lg" aria-hidden="true">

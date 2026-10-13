@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: PageProps<"/blog/[slug]">)
                 <span>{post.readingTime} мин чтения</span>
               </div>
               <h1 className="page-heading mt-6 font-display font-bold">{post.title}</h1>
-              <p className="mt-5 text-lg leading-relaxed text-white/70">{post.description}</p>
+              <p className="mt-5 text-lg leading-relaxed text-white/85">{post.description}</p>
             </header>
 
             <Toc items={toc} variant="mobile" />
@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }: PageProps<"/blog/[slug]">)
               <Markdown blocks={post.body} />
             </div>
 
-            <CtaBox />
+            <CtaBox title={post.cta} text={post.ctaText} />
 
             <Faq items={post.faq} title={post.faqTitle} />
 

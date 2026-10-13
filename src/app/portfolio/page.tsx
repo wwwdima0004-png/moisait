@@ -59,14 +59,14 @@ export default function PortfolioPage() {
                 Первые кейсы готовятся к публикации
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Мы не выдумываем проекты для красоты: здесь появятся только реальные работы с описанием
+                Я не выдумываю проекты для красоты: здесь появятся только реальные работы с описанием
                 задачи и результата. Пока раздел пуст, можно обсудить вашу задачу напрямую.
               </p>
               <WhatsAppButton className="mt-8" fullOnMobile />
             </div>
           )}
 
-          <h2 className="mt-20 font-display text-2xl font-semibold sm:text-3xl">Чем можем помочь уже сейчас</h2>
+          <h2 className="mt-20 font-display text-2xl font-semibold sm:text-3xl">Чем могу помочь уже сейчас</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {services.map((s) => (
               <ServiceCard key={s.slug} service={s} />

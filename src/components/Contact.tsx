@@ -5,7 +5,7 @@ import WhatsAppButton from "./WhatsAppButton";
 
 export default function Contact({
   title = "Обсудим ваш проект?",
-  text = "Напишите в WhatsApp: расскажите о задаче в двух словах, мы зададим уточняющие вопросы и предложим следующий шаг.",
+  text = "Напишите мне в WhatsApp и расскажите о задаче в двух словах. Задам уточняющие вопросы и назову цену и сроки.",
 }: {
   title?: string;
   text?: string;

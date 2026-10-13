@@ -9,7 +9,7 @@ type Props = {
   fullOnMobile?: boolean;
 };
 
-// Главная кнопка связи на сайте. Высота 48–56px — удобная зона нажатия пальцем.
+// Главная кнопка связи на сайте. Высота 48-56px: удобная зона нажатия пальцем.
 export default function WhatsAppButton({
   label = "Написать в WhatsApp",
   variant = "solid",

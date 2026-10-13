@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/config/site";
 
 export const metadata = pageMetadata({
-  title: "Разработка сайтов, Telegram-ботов и приложений в Бишкеке — Pulse Tech",
+  title: "Разработка сайтов, Telegram-ботов и приложений в Бишкеке | Pulse Tech",
   description: site.description,
   path: "/",
   absoluteTitle: true,

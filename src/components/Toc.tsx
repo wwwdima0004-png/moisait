@@ -1,4 +1,4 @@
-// Оглавление по заголовкам H2. На телефоне — раскрывающийся список, на десктопе — в боковой колонке.
+// Оглавление по заголовкам H2. На телефоне раскрывающийся список, на десктопе боковая колонка.
 export default function Toc({ items, variant }: { items: { id: string; text: string }[]; variant: "mobile" | "desktop" }) {
   if (items.length < 2) return null;
   const links = (

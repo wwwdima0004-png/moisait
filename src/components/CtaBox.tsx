@@ -1,17 +1,22 @@
 import WhatsAppButton from "./WhatsAppButton";
 
-// Встроенный призыв к действию внутри статей и страниц услуг.
+// Призыв к действию внутри статей и страниц услуг: заметная карточка с кнопкой WhatsApp.
+// В Markdown вставляется блоком «:::cta Заголовок … :::», в конце статьи выводится страницей.
 export default function CtaBox({
-  title = "Обсудим вашу задачу?",
-  text = "Опишите проект в WhatsApp своими словами: зададим уточняющие вопросы и подскажем, с чего начать.",
+  title = "Хотите так же для своего бизнеса?",
+  text = "Напишите мне в WhatsApp и в двух словах опишите задачу. Отвечу, задам пару вопросов и назову цену.",
+  children,
+  className = "",
 }: {
   title?: string;
   text?: string;
+  children?: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <aside className="mt-14 rounded-2xl border border-white/15 bg-white/[0.03] p-6 sm:p-8">
-      <p className="font-display text-xl font-semibold text-white sm:text-2xl">{title}</p>
-      <p className="mt-2 max-w-xl text-white/70">{text}</p>
+    <aside className={`cta-card ${className}`}>
+      <p className="cta-card-title font-display">{title}</p>
+      <div className="cta-card-text">{children ?? <p>{text}</p>}</div>
       <WhatsAppButton className="mt-6" fullOnMobile />
     </aside>
   );

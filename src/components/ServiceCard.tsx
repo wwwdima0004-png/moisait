@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 import type { Service } from "@/lib/content";
 import ServiceIcon from "./ServiceIcon";
 
-// На телефоне — компактная строка (иконка, название, короткое описание),
-// с sm и шире — вертикальная карточка одинаковой высоты в сетке.
+// На телефоне компактная строка (иконка, название, короткое описание),
+// с sm и шире вертикальная карточка одинаковой высоты в сетке.
 export default function ServiceCard({ service, headingLevel = "h3" }: { service: Service; headingLevel?: "h2" | "h3" }) {
   const Heading = headingLevel;
   return (

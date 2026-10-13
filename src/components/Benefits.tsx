@@ -13,8 +13,8 @@ export default function Benefits() {
     <section className="border-t border-white/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div>
-          <p className="eyebrow">Почему с нами удобно</p>
-          <h2 className="section-heading mt-3 font-display font-semibold tracking-tight">Работаем на результат бизнеса</h2>
+          <p className="eyebrow">Почему со мной удобно</p>
+          <h2 className="section-heading mt-3 font-display font-semibold tracking-tight">Работаю на результат бизнеса</h2>
         </div>
         <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => {

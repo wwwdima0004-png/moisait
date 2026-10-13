@@ -23,7 +23,7 @@ export default function Faq({ items, title = "Частые вопросы", id =
                 className="shrink-0 text-white/60 transition-transform duration-200 group-open:rotate-45"
               />
             </summary>
-            <div className="pb-5 text-white/70">
+            <div className="pb-5">
               <Markdown blocks={item.answer} />
             </div>
           </details>

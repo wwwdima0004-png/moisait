@@ -44,7 +44,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center gap-2.5 font-brand text-lg font-semibold tracking-tight"
-          aria-label={`${site.name} — на главную`}
+          aria-label={`${site.name}, на главную`}
         >
           <PulseMark className="h-7 w-7 text-white" />
           {site.name}

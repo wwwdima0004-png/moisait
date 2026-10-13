@@ -38,7 +38,7 @@ export default function Hero({ services }: { services: Service[] }) {
             <span className="corner br" aria-hidden="true" />
             <h1 className="hero-heading font-display font-bold tracking-tight">
               <span className="block">
-                Создаём <span className="whitespace-nowrap">IT‑решения,</span>
+                Создаю <span className="whitespace-nowrap">IT‑решения,</span>
               </span>
               <span className="block text-white/55">которые приносят</span>
               <span className="block">
@@ -49,8 +49,8 @@ export default function Hero({ services }: { services: Service[] }) {
           </div>
 
           <p className="hero-lede hero-in mt-7 max-w-xl text-white/70 [animation-delay:120ms]">
-            Разрабатываем сайты, Telegram-ботов, мини-приложения, CRM-системы и веб-сервисы,
-            автоматизируем процессы для бизнеса в Бишкеке и по всему Кыргызстану.
+            Делаю сайты, Telegram-ботов, мини-приложения, CRM-системы и веб-сервисы под ключ
+            для бизнеса в Бишкеке, по всему Кыргызстану и в странах СНГ.
           </p>
 
           <div className="hero-in mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 [animation-delay:200ms]">

@@ -1,5 +1,14 @@
 import Link from "next/link";
-import type { Block, Inline } from "@/lib/markdown";
+import { CircleAlert, Lightbulb, ListChecks, MessageSquareText } from "lucide-react";
+import { calloutLabels, type Block, type CalloutKind, type Inline } from "@/lib/markdown";
+import CtaBox from "./CtaBox";
+
+const calloutIcons: Record<CalloutKind, typeof Lightbulb> = {
+  summary: ListChecks,
+  tip: Lightbulb,
+  important: CircleAlert,
+  example: MessageSquareText,
+};
 
 function InlineNodes({ nodes }: { nodes: Inline[] }) {
   return (
@@ -39,9 +48,19 @@ function InlineNodes({ nodes }: { nodes: Inline[] }) {
 }
 
 // Типографика длинного текста: короткая строка (~68 знаков), воздух между блоками.
+// Все статьи и страницы услуг оформляются этими классами (globals.css, раздел
+// «Длинный текст»), поэтому новые материалы автоматически выглядят так же.
 export default function Markdown({ blocks }: { blocks: Block[] }) {
   return (
     <div className="prose-pulse">
+      <Blocks blocks={blocks} />
+    </div>
+  );
+}
+
+function Blocks({ blocks }: { blocks: Block[] }) {
+  return (
+    <>
       {blocks.map((b, i) => {
         switch (b.type) {
           case "h2":
@@ -92,10 +111,71 @@ export default function Markdown({ blocks }: { blocks: Block[] }) {
                 ))}
               </blockquote>
             );
+          case "callout": {
+            const Icon = calloutIcons[b.kind];
+            return (
+              <aside key={i} className={`callout callout-${b.kind}`} aria-label={calloutLabels[b.kind]}>
+                <p className="callout-label">
+                  <Icon size={16} aria-hidden="true" />
+                  {calloutLabels[b.kind]}
+                </p>
+                <Blocks blocks={b.children} />
+              </aside>
+            );
+          }
+          case "steps":
+            return (
+              <ol key={i} className="steps">
+                {b.items.map((item, j) => (
+                  <li key={j}>
+                    <span className="steps-num" aria-hidden="true">
+                      {j + 1}
+                    </span>
+                    <div>
+                      <InlineNodes nodes={item} />
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            );
+          case "cards":
+            return (
+              <ul key={i} className="cards">
+                {b.items.map((item, j) => (
+                  <li key={j}>
+                    {item.title.length > 0 && (
+                      <p className="cards-title">
+                        <InlineNodes nodes={item.title} />
+                      </p>
+                    )}
+                    <p>
+                      <InlineNodes nodes={item.text} />
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            );
+          case "compare":
+            return (
+              <div key={i} className="compare">
+                {b.columns.map((col, j) => (
+                  <div key={j} className="compare-col">
+                    <p className="compare-title">{col.title}</p>
+                    <Blocks blocks={col.children} />
+                  </div>
+                ))}
+              </div>
+            );
+          case "cta":
+            return (
+              <CtaBox key={i} title={b.title || undefined} className="cta-inline">
+                <Blocks blocks={b.children} />
+              </CtaBox>
+            );
           case "table":
             return (
               <div key={i} className="table-wrap" role="region" aria-label="Таблица" tabIndex={0}>
-                <table>
+                <table className={b.head.length > 3 ? "table-wide" : undefined}>
                   <thead>
                     <tr>
                       {b.head.map((cell, j) => (
@@ -121,6 +201,6 @@ export default function Markdown({ blocks }: { blocks: Block[] }) {
             );
         }
       })}
-    </div>
+    </>
   );
 }

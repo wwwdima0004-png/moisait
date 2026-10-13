@@ -27,7 +27,7 @@ export default function NotFound() {
             Такой страницы нет, но <span className="hero-mark" style={{ marginLeft: 0 }}>решение</span> найдётся
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/70">
-            Возможно, ссылка устарела или в адресе опечатка. Перейдите в нужный раздел или напишите нам.
+            Возможно, ссылка устарела или в адресе опечатка. Перейдите в нужный раздел или напишите мне.
           </p>
           <ul className="mt-10 flex flex-wrap gap-3">
             {links.map((l) => (

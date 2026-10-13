@@ -8,7 +8,7 @@ import "./globals.css";
 // Все четыре гарнитуры вариативные: без списка начертаний next/font грузит
 // один файл на набор символов вместо отдельного файла на каждый вес.
 
-// Space Grotesk не имеет кириллицы — только латинский wordmark «Pulse Tech».
+// Space Grotesk не имеет кириллицы, поэтому только латинский wordmark «Pulse Tech».
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-brand",
   subsets: ["latin"],
@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
   preload: false,
 });
 
-// Ruda — заголовки (h1–h3), полноценная кириллица.
+// Ruda: заголовки (h1-h3), полноценная кириллица.
 const ruda = Ruda({
   variable: "--font-display",
   subsets: ["latin", "cyrillic"],
@@ -29,7 +29,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Моноширинный — мелкие технические подписи, не критичен для первого экрана.
+// Моноширинный: мелкие технические подписи, не критичен для первого экрана.
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin", "cyrillic"],
@@ -37,7 +37,7 @@ const jetbrainsMono = JetBrains_Mono({
   preload: false,
 });
 
-const defaultTitle = "Разработка сайтов, Telegram-ботов и приложений в Бишкеке — Pulse Tech";
+const defaultTitle = "Разработка сайтов, Telegram-ботов и приложений в Бишкеке | Pulse Tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

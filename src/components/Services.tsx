@@ -8,9 +8,9 @@ export default function Services({ services }: { services: Service[] }) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div>
           <p className="eyebrow">Услуги</p>
-          <h2 className="section-heading mt-3 font-display font-semibold tracking-tight">Что мы создаём</h2>
+          <h2 className="section-heading mt-3 font-display font-semibold tracking-tight">Что я делаю</h2>
           <p className="mt-4 max-w-2xl text-white/65">
-            От сайта-визитки до внутренней CRM: подбираем формат под задачу и бюджет, а не продаём один
+            От сайта-визитки до внутренней CRM: подбираю формат под задачу и бюджет, а не продаю один
             шаблонный продукт всем подряд.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Services({ services }: { services: Service[] }) {
               <div>
                 <h3 className="font-display text-lg font-semibold">Не нашли свою задачу?</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/65">
-                  Опишите её своими словами, подскажем, какое решение подойдёт.
+                  Опишите её своими словами, подскажу, какое решение подойдёт.
                 </p>
               </div>
               <WhatsAppButton size="md" label="Написать" />

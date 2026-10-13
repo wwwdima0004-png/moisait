@@ -5,7 +5,7 @@ export default function Process() {
     <section className="border-t border-white/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div>
-          <p className="eyebrow">Как мы работаем</p>
+          <p className="eyebrow">Как я работаю</p>
           <h2 className="section-heading mt-3 font-display font-semibold tracking-tight">От сообщения до запуска</h2>
         </div>
         <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">

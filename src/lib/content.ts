@@ -5,8 +5,8 @@ import { countWords, blocksToText, extractFaq, parseMarkdown, type Block, type F
 import type { ServiceIcon } from "@/config/site";
 
 // Контент хранится в Markdown-файлах с frontmatter:
-//   src/content/blog/<slug>.md      — статьи блога
-//   src/content/services/<slug>.md  — посадочные страницы услуг
+//   src/content/blog/<slug>.md      статьи блога
+//   src/content/services/<slug>.md  посадочные страницы услуг
 // Имя файла = адрес страницы. Чтобы добавить статью, скопируй любой файл
 // из src/content/blog, переименуй и поменяй поля во frontmatter и текст.
 // Всё читается только во время сборки: страницы генерируются статически.
@@ -80,6 +80,9 @@ export type Post = Parsed & {
   readingTime: number;
   services: string[];
   related: string[];
+  // Заголовок и текст карточки WhatsApp в конце статьи (необязательно).
+  cta?: string;
+  ctaText?: string;
 };
 
 export const getPosts = cache((): Post[] => {
@@ -96,6 +99,8 @@ export const getPosts = cache((): Post[] => {
         readingTime: Number(data.readingTime) || Math.max(1, Math.round(parsed.words / 180)),
         services: list(data.services),
         related: list(data.related),
+        cta: data.cta || undefined,
+        ctaText: data.ctaText || undefined,
         ...parsed,
       };
     })

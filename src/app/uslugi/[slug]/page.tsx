@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: PageProps<"/uslugi/[slug]"
               <ServiceIcon name={service.icon} size={22} />
             </div>
             <h1 className="page-heading mt-6 max-w-4xl font-display font-bold">{service.h1}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{service.lead}</p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85">{service.lead}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
               <WhatsAppButton fullOnMobile />
               <a href={contactLinks.phone} className="inline-flex min-h-12 items-center justify-center gap-2 text-white/75 hover:text-white">
@@ -79,8 +79,8 @@ export default async function ServicePage({ params }: PageProps<"/uslugi/[slug]"
           <article className="min-w-0 max-w-[720px]">
             <Markdown blocks={service.body} />
             <CtaBox
-              title={`Обсудим ваш проект: ${service.name.toLowerCase()}`}
-              text="Расскажите о задаче в WhatsApp. Зададим вопросы, предложим решение и сориентируем по срокам и стоимости."
+              title="Хотите так же для своего бизнеса?"
+              text="Напишите мне в WhatsApp и в двух словах опишите задачу. Задам пару вопросов, назову цену и сроки. Всё техническое беру на себя."
             />
             <Faq items={service.faq} title={service.faqTitle} />
           </article>

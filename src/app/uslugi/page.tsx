@@ -12,7 +12,7 @@ import { site } from "@/config/site";
 export const metadata = pageMetadata({
   title: "Услуги: сайты, Telegram-боты, приложения и CRM в Бишкеке",
   description:
-    "Разработка сайтов, Telegram-ботов, мини-приложений, мобильных и веб-приложений, CRM-систем, SaaS и автоматизация бизнеса в Бишкеке. Выберите услугу и напишите нам в WhatsApp.",
+    "Разработка сайтов, Telegram-ботов, мини-приложений, мобильных и веб-приложений, CRM-систем, SaaS и автоматизация бизнеса в Бишкеке. Под ключ, с запуском и поддержкой. Выберите услугу и напишите мне в WhatsApp.",
   path: "/uslugi",
 });
 
@@ -26,8 +26,8 @@ export default function ServicesPage() {
           <Breadcrumbs items={[{ name: "Услуги", href: "/uslugi" }]} />
           <h1 className="page-heading mt-6 max-w-3xl font-display font-bold">Услуги Pulse Tech</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/70">
-            Делаем digital-продукты для бизнеса в Бишкеке и по всему Кыргызстану: от сайта до внутренней
-            системы учёта. Выберите направление, чтобы узнать, как мы работаем и от чего зависит стоимость.
+            Делаю digital-продукты под ключ для бизнеса в Бишкеке, по Кыргызстану и СНГ: от сайта до внутренней
+            системы учёта. Выберите направление, чтобы узнать, как я работаю и от чего зависит стоимость.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {services.map((s) => (
